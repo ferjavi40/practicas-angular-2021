@@ -1,0 +1,53 @@
+<h2 class="p-4">Caballeros del zodiaco</h2>
+<div class="container">
+    <div class="card-columns">
+        <div *ngFor="let caba of caballero" class="card">
+            <img [src]="caba.img" class="card-img-top imagen p-3 rounded" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{caba.nombre}}</h5>
+                <p class="card-text">{{caba.signo}}</p>
+                <p class="card-text">{{caba.armadura}}</p>
+                <p class="card-text">{{caba.poder | number}}</p>
+    
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <button (click)="borrarCaballero()" class="btn btn-outline-danger">Borrar caballero</button>
+        </div>
+        <div class="col-6">
+            <button (click)="restaurarCaballero()" class="btn btn-outline-success">Restaurar caballero</button>
+        </div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-6">
+            <ul *ngFor="let borrados of caballeroBorrado">
+                <li>
+                    <p>{{borrados.nombre}}</p>
+                </li>
+            </ul>
+            <div>
+                <h3 *ngIf="!caballeroBorrado.length">
+                    No hay caballeros borrados!
+                </h3>
+            </div>
+        </div>
+    
+        <div class="col-6">
+    
+            <form (ngSubmit)=agregarCaballero()>
+                <input [(ngModel)]="caballeroNuevo.nombre" name="nombre" type="text" placeholder="Nombre de personaje" class="form-control m-3" >
+                <input [(ngModel)]="caballeroNuevo.signo" name="signo" type="text" placeholder="Signo del zodiaco" class="form-control m-3" >
+                <input [(ngModel)]="caballeroNuevo.armadura" name="armadura" type="text" placeholder="Tipo de armadura" class="form-control m-3" >
+                <input [(ngModel)]="caballeroNuevo.poder" name="poder" type="number" placeholder="Cantidad de poder" class="form-control m-3" >
+                <input [(ngModel)]="caballeroNuevo.img" name="img" type="text" placeholder="Ruta url de imagen" class="form-control m-3" >
+                <button type="submit" class="btn btn-primary">Agregar</button>
+    
+            </form>
+    
+        </div>
+    </div>
+
+</div>
