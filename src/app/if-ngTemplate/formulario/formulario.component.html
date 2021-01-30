@@ -1,0 +1,26 @@
+<div>
+    <ul *ngFor="let borrados of caballeroBorrado">
+        <li>
+            <p>{{borrados.nombre}}</p>
+        </li>
+    </ul>
+    <div>
+        <h3 *ngIf="!caballeroBorrado.length">
+            No hay caballeros borrados!
+        </h3>
+    </div>
+</div>
+
+<div class="col-6">
+
+    <form (ngSubmit)=agregarCaballero()>
+        <input [(ngModel)]="caballeroNuevo.nombre" name="nombre" type="text" placeholder="Nombre de personaje" class="form-control m-3" >
+        <input [(ngModel)]="caballeroNuevo.signo" name="signo" type="text" placeholder="Signo del zodiaco" class="form-control m-3" >
+        <input [(ngModel)]="caballeroNuevo.armadura" name="armadura" type="text" placeholder="Tipo de armadura" class="form-control m-3" >
+        <input [(ngModel)]="caballeroNuevo.poder" name="poder" type="number" placeholder="Cantidad de poder" class="form-control m-3" >
+        <input [(ngModel)]="caballeroNuevo.img" name="img" type="text" placeholder="Ruta url de imagen" class="form-control m-3" >
+        <button type="submit" class="btn btn-primary">Agregar</button>
+
+    </form>
+
+</div>

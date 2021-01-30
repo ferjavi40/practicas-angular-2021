@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PersonajeComponent } from './personaje/personaje.component';
 import { FormsModule } from '@angular/forms';
 import { CaballerosComponent } from './caballeros/caballeros.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 
 
@@ -10,7 +11,8 @@ import { CaballerosComponent } from './caballeros/caballeros.component';
 @NgModule({
   declarations: [
     PersonajeComponent,
-    CaballerosComponent
+    CaballerosComponent,
+    FormularioComponent
   ],
   imports: [
     CommonModule,
