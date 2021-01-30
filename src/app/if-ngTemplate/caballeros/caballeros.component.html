@@ -1,0 +1,9 @@
+<div *ngFor="let caba of caballero" class="card">
+    <img [src]="caba.img" class="card-img-top imagen p-3 rounded" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{caba.nombre}}</h5>
+        <p class="card-text">{{caba.signo}}</p>
+        <p class="card-text">{{caba.armadura}}</p>
+        <p class="card-text">{{caba.poder | number}}</p>
+
+    </div>
