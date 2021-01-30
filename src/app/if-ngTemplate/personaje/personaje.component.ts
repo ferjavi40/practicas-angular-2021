@@ -45,7 +45,6 @@ export class PersonajeComponent {
   }
 
 
-  caballeroBorrado: Personaje[] = [];
 
 
 
@@ -59,16 +58,9 @@ export class PersonajeComponent {
 
 
 
-  borrarCaballero() {
-    const borrado: Personaje = this.caballero.pop();
-    return this.caballeroBorrado.push(borrado);
-    
+  agregarNuevocaballero(argumento:Personaje){
+    console.log(argumento);
+    this.caballero.push(argumento);
   }
-
-  restaurarCaballero() {
-    const cabaRestaurado: Personaje = this.caballeroBorrado.pop();
-    this.caballero.push(cabaRestaurado);
-  }
-
 
 }

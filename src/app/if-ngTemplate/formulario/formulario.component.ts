@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Personaje } from '../../interfaces/personaje';
 
 
@@ -9,12 +9,30 @@ import { Personaje } from '../../interfaces/personaje';
 })
 export class FormularioComponent {
 
-@Input() caballeroBorrado:Personaje [] = [];
-@Input() caballero:Personaje [] = [];
-@Input() caballeroNuevo:Personaje;
-@Input() agregarCaballero: any;
-@Input() borrarCaballero: any;
+  // @Input() caballeroBorrado: Personaje[] = [];
+  // @Input() caballero: Personaje[] = [];
 
+  @Input() caballeroNuevo: Personaje = {
+    nombre: '',
+    armadura: '',
+    poder: 0,
+    signo: '',
+    img: ''
+  };
+
+  @Output() onNuevoCaballero: EventEmitter<Personaje>= new EventEmitter<Personaje>();
  
+
+
+
+  agregarCaballero() {
+    this.onNuevoCaballero.emit(this.caballeroNuevo)
+    this.caballeroNuevo = { nombre: '', armadura: '', poder: 0, signo: '', img: '' }
+
+  }
+
+
+
+
 
 }
