@@ -1,5 +1,8 @@
-import { Component, Input} from '@angular/core';
+import { Component} from '@angular/core';
 import { Personaje } from '../../interfaces/personaje';
+//servicio
+import { CaballeroService } from '../../servicios/caballero.service';
+
 
 
 @Component({
@@ -9,7 +12,11 @@ import { Personaje } from '../../interfaces/personaje';
 })
 export class CaballerosComponent  {
 
-  @Input() caballero: Personaje [] = [];
 
 
+  constructor( private _caballeroServicio:CaballeroService){}
+
+  get caballero():Personaje[]{
+    return this._caballeroServicio.caballero;
+  }
 }

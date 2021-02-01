@@ -2,20 +2,14 @@
 <div class="container">
     <div class="card-columns">
         
-        <app-caballeros [caballero]="caballero"></app-caballeros>
+        <app-caballeros ></app-caballeros>
         
     </div>
     <div class="row">
-        <!-- <div class="col-6">
-            <button (click)="borrarCaballero()" class="btn btn-outline-danger">Borrar caballero</button>
-        </div>
-        <div class="col-6">
-            <button (click)="restaurarCaballero()" class="btn btn-outline-success">Restaurar caballero</button>
-        </div> -->
     </div>
     
     
-        <app-formulario (onNuevoCaballero)="agregarNuevocaballero($event)" [caballeroNuevo]="caballeroNuevo"  class="row mt-5"></app-formulario>
+        <app-formulario   class="row mt-5"></app-formulario>
     
     
 
