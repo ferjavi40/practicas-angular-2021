@@ -8,7 +8,7 @@ import { Personaje } from '../interfaces/personaje';
 })
 export class CaballeroService {
 
-  private _caballero: Personaje [] = [
+  private _caballero: Personaje[] = [
     {
       nombre: 'Shaka',
       armadura: 'Oro',
@@ -33,13 +33,13 @@ export class CaballeroService {
     }
   ];
 
-  get caballero():Personaje []{
-    return [...this._caballero];
+  get caballero(): Personaje[] {
+    return this._caballero;
   }
 
   constructor() { }
 
-  agregarPersonaje(personaje:Personaje){
+  agregarPersonaje(personaje: Personaje) {
     this._caballero.push(personaje);
   }
 
